@@ -1,0 +1,2 @@
+# MPAndroidChartFix
+MPAndroidChart的辅助类，解决MPAndroidChart中的一些小细节，现已实现：解决原生PieChart值重合的问题
