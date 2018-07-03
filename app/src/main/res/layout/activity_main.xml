@@ -8,32 +8,90 @@
     android:orientation="vertical"
     tools:context="com.teaanddogdog.mpandroidchartfix.MainActivity">
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pie_chart1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1">
 
-    <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
-        android:id="@+id/pie_chart2"
+        <TextView
+            android:textSize="10sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="原生PieChart"/>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart1"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        app:mp_chart_out_value_place_mode="Simple"/>
+        android:layout_weight="1">
 
+        <TextView
+            android:textSize="10sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="PieChartFixCover\nmode=Simple"/>
 
-    <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
-        android:id="@+id/pie_chart3"
+        <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
+            android:id="@+id/pie_chart2"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:mp_chart_out_value_place_mode="Simple"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        app:mp_chart_out_value_place_mode="Top_Align"/>
+        android:layout_weight="1">
 
-    <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
-        android:id="@+id/pie_chart4"
+        <TextView
+            android:textSize="10sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="PieChartFixCover\nmode=Top_Align"/>
+
+        <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
+            android:id="@+id/pie_chart3"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:mp_chart_out_value_place_mode="Top_Align"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1">
+
+        <TextView
+            android:textSize="10sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="PieChartFixCover\nmode=AVG\n也是默认模式"/>
+
+        <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
+
+            android:id="@+id/pie_chart4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            />
+    </LinearLayout>
 </LinearLayout>

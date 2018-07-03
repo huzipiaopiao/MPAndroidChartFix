@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
-        mPieChart1 = findViewById(R.id.pie_chart1);
-        mPieChart2 = findViewById(R.id.pie_chart2);
-        mPieChart3 = findViewById(R.id.pie_chart3);
-        mPieChart4 = findViewById(R.id.pie_chart4);
+        mPieChart1 = (PieChart) findViewById(R.id.pie_chart1);
+        mPieChart2 = (PieChart) findViewById(R.id.pie_chart2);
+        mPieChart3 = (PieChart) findViewById(R.id.pie_chart3);
+        mPieChart4 = (PieChart) findViewById(R.id.pie_chart4);
 
         setPieChart(mPieChart1, lables1);
         setPieChart(mPieChart2, lables2);
