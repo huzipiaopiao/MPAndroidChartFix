@@ -3,8 +3,12 @@
 
 MPAndroidChart的辅助类，解决MPAndroidChart中的一些小细节，现已实现：解决原生PieChart值重合的问题
 
+## 1、演示
+### 解决原生PieChart数据过多时，值在外面显示会重合的问题
+![图示](https://github.com/huzipiaopiao/MPAndroidChartFix/blob/master/img/demo_img1.png)
+
 # 使用方法：
-## 1、依赖配置
+## 2、依赖配置
 在项目最外面的build.gradle文件中，allprojects节点下的repositories中添加：
 ```
 maven{ url  "https://dl.bintray.com/teadoglibrary/MPAndroidChartFix" }
@@ -13,12 +17,12 @@ maven{ url  "https://dl.bintray.com/teadoglibrary/MPAndroidChartFix" }
 
 `compile 'com.teaanddogdog:mpandroidchartutil:1.0.0'`
 
-版本建议根据最新版本修改
+其中的版本建议根据最新版本修改
 
 ### 本库需要依赖MPAndroidChart使用，所以app的build.gradle文件中，dependencies节点下还要添加MPAndroidChart库：
 `compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'`
 
-## 2、代码中使用
+## 3、代码中使用
 和原生的PieChart用法相同，只是多了几个模式，需在xml中设置，暂没有提供代码中设置的方法：
 mp_chart_out_value_place_mode:有3种模式：
 
@@ -39,5 +43,6 @@ mp_chart_out_value_place_mode:有3种模式：
             />
 ```
 
-## 3、图例
-![图示](https://github.com/huzipiaopiao/MPAndroidChartFix/blob/master/img/demo_img1.png)
+## 4、说明：
+
+### 本库是在MPAndroidChart版本为v3.0.3的基础上进行开发的
