@@ -24,8 +24,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] lables1 = {"湿度传感器", "温度传感器", "震动传感器","test1"};
-    String[] lables2 = {"井道", "电缆", "轿厢","test1"};
+    String[] lables1 = {" ", " ", " "," "};
+    String[] lables2 = {" ", " ", " "," "};
     private Random mRandom = new Random();
     private PieChart mPieChart1;
     private PieChart mPieChart2;
