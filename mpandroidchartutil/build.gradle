@@ -8,10 +8,10 @@ def gitUrl = 'https://github.com/huzipiaopiao/MPAndroidChartFix.git'   // Git仓
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-version = "1.0.0" //发布版本号
+version = "1.0.1" //发布版本号
 group = "com.teaanddogdog" //最终引用形式，如compile 'com.leon.lfilepicker:1.0.0'，其中lfilepicker在后面配置
 
-//配置参照的：https://www.jianshu.com/p/b5d3462407fc
+//配置参照的：https://www.jianshu.com/p/b5d3462407fc 命令：gradle bintrayUpload
 
 android {
     compileSdkVersion 25
@@ -35,12 +35,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
+    provided fileTree(include: ['*.jar'], dir: 'libs')
+//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+    provided 'com.android.support:appcompat-v7:25.3.1'
+//    testCompile 'junit:junit:4.12'
     provided 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 }
 
@@ -60,7 +60,7 @@ bintray {
         version{
             name = project.getVersion()
             vcsTag = "v${project.getVersion()}"
-            desc = 'first publish'//描述，自己定义
+            desc = 'remove some dependencies'//描述，自己定义
             released = new Date()
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
