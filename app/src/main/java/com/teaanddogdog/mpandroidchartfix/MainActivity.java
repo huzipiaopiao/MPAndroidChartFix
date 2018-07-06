@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Random mRandom = new Random();
     private PieChart mPieChart1;
     private PieChart mPieChart2;
-    private PieChart mPieChart3;
+//    private PieChart mPieChart3;
     private PieChart mPieChart4;
     private Context mContext;
 
@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
         mContext = this;
         mPieChart1 = (PieChart) findViewById(R.id.pie_chart1);
         mPieChart2 = (PieChart) findViewById(R.id.pie_chart2);
-        mPieChart3 = (PieChart) findViewById(R.id.pie_chart3);
+//        mPieChart3 = (PieChart) findViewById(R.id.pie_chart3);
         mPieChart4 = (PieChart) findViewById(R.id.pie_chart4);
 
         setPieChart(mPieChart1, lables1);
         setPieChart(mPieChart2, lables2);
-        setPieChart(mPieChart3, lables2);
+//        setPieChart(mPieChart3, lables2);
         setPieChart(mPieChart4, lables2);
     }
 
@@ -114,11 +114,29 @@ public class MainActivity extends AppCompatActivity {
         entryList.add(new PieEntry(mRandom.nextInt(200), alarm[0]));
         entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
         entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[0]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[0]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[0]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[0]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[0]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
+        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
 
         PieDataSet mDataSet = new PieDataSet(entryList, "");
         mDataSet.setSliceSpace(1);//各数据间的饼图间隔
         mDataSet.setColors(getArgb(), getArgb(), getArgb());//各数据的颜色
-        mDataSet.setValueTextSize(10);//值的字体大小
+//        mDataSet.setValueTextSize(6);//值的字体大小
         mDataSet.setValueTextColor(0xff000000);//值的颜色
         LargeValueFormatter valueFormatter = new LargeValueFormatter();
         valueFormatter.setAppendix("次");

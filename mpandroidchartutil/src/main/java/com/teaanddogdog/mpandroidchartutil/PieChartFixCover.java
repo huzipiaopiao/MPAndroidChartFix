@@ -15,7 +15,6 @@ import com.teaanddogdog.mpandroidchartutil.renderer.PieChartRendererFixCover;
  */
 
 public class PieChartFixCover extends PieChart {
-    private String mode;
 
     public PieChartFixCover(Context context) {
         this(context, null);
@@ -33,10 +32,12 @@ public class PieChartFixCover extends PieChart {
     private void getAttrs(AttributeSet attrs) {
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MPAndroidChartUtil);
-            mode = a.getString(R.styleable.MPAndroidChartUtil_mp_chart_out_value_place_mode);
+            String mode = a.getString(R.styleable.MPAndroidChartUtil_mp_chart_out_value_place_mode);
+            boolean auto_adapt_text_size = a.getBoolean(R.styleable.MPAndroidChartUtil_mp_chart_auto_adapt_text_size, false);
             a.recycle();
+            ((PieChartRendererFixCover) mRenderer).setMode(mode);
+            ((PieChartRendererFixCover) mRenderer).setAuto_adapt_text_size(auto_adapt_text_size);
         }
-        ((PieChartRendererFixCover) mRenderer).setMode(mode);
     }
 
 

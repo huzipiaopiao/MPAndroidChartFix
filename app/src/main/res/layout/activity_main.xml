@@ -44,34 +44,35 @@
             android:textSize="10sp"/>
 
         <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
-
             android:id="@+id/pie_chart4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
+            app:mp_chart_out_value_place_mode="AVG"
+            app:mp_chart_auto_adapt_text_size="true"
             />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1">-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="PieChartFixCover\nmode=Top_Align\n（不推荐）"
-            android:textSize="10sp"/>
+        <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center"-->
+            <!--android:text="PieChartFixCover\nmode=Top_Align\n（不推荐）"-->
+            <!--android:textSize="10sp"/>-->
 
-        <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
-            android:id="@+id/pie_chart3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4"
-            app:mp_chart_out_value_place_mode="Top_Align"/>
-    </LinearLayout>
+        <!--<com.teaanddogdog.mpandroidchartutil.PieChartFixCover-->
+            <!--android:id="@+id/pie_chart3"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="4"-->
+            <!--app:mp_chart_out_value_place_mode="Top_Align"/>-->
+    <!--</LinearLayout>-->
 
 
     <LinearLayout
