@@ -8,7 +8,7 @@ def gitUrl = 'https://github.com/huzipiaopiao/MPAndroidChartFix.git'   // Git仓
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-version = "1.0.2" //发布版本号
+version = "1.0.3" //发布版本号
 group = "com.teaanddogdog" //最终引用形式，如compile 'com.leon.lfilepicker:1.0.0'，其中lfilepicker在后面配置
 
 //配置参照的：https://www.jianshu.com/p/b5d3462407fc 命令：gradle bintrayUpload
@@ -60,7 +60,7 @@ bintray {
         version{
             name = project.getVersion()
             vcsTag = "v${project.getVersion()}"
-            desc = 'remove some mode'//描述，自己定义
+            desc = 'fix a bug'//描述，自己定义
             released = new Date()
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }

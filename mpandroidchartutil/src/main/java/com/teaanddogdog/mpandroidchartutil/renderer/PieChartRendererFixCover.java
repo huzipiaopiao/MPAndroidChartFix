@@ -95,8 +95,8 @@ public class PieChartRendererFixCover extends PieChartRenderer {
         // get whole the radius
         float radius = mChart.getRadius();
         float rotationAngle = mChart.getRotationAngle();
-        float[] drawAngles = mChart.getDrawAngles();
-        float[] absoluteAngles = mChart.getAbsoluteAngles();
+        float[] drawAngles = mChart.getDrawAngles();//每一个数据占据的角度 15 15 15
+        float[] absoluteAngles = mChart.getAbsoluteAngles();//每一个数据累计后的总角度 15 30 45
 
         float phaseX = mAnimator.getPhaseX();
         float phaseY = mAnimator.getPhaseY();
@@ -211,8 +211,8 @@ public class PieChartRendererFixCover extends PieChartRenderer {
             xIndex = 0;
 
 
-            float rightSpace = radius * 2 / (rightCount - 1);
-            float leftSpace = radius * 2 / (leftCount - 1);
+            float rightSpace = (rightCount > 1) ? radius * 2 / (rightCount - 1) : radius / 2;
+            float leftSpace = (leftCount > 1) ? radius * 2 / (leftCount - 1) : radius / 2;
 
 
             int tempRightIndex = 0;
@@ -303,7 +303,11 @@ public class PieChartRendererFixCover extends PieChartRenderer {
 //                            tempLeftIndex++;
                             tempLeftToLeftIndex++;
                         } else {//没有转动时 和 有转动，且原本左侧上方的区域进入到右侧时
-                            pt2y = (measuredHeight - topAndBottomSpace / 2) - leftSpace * (tempLeftIndex + leftToLeftCount);
+                            if (leftCount > 1) {
+                                pt2y = (measuredHeight - topAndBottomSpace / 2) - leftSpace * (tempLeftIndex + leftToLeftCount);
+                            } else {
+                                pt2y = pt1y;
+                            }
                             tempLeftIndex++;
                         }
 
@@ -328,8 +332,13 @@ public class PieChartRendererFixCover extends PieChartRenderer {
                             tempRightIndex++;
                             tempRightToRightIndex++;
                         } else {//没有转动时 和 有转动，且原本右侧下方的区域进入到左侧时
-                            pt2y = topAndBottomSpace / 2 + rightSpace * (tempRightIndex + leftToRightCount + rightToRightCount);
-                            tempRightIndex++;
+                            if (rightCount > 1) {
+                                pt2y = topAndBottomSpace / 2 + rightSpace * (tempRightIndex + leftToRightCount + rightToRightCount);
+                                tempRightIndex++;
+                            } else {
+                                pt2y = pt1y;
+                            }
+
                         }
 
                         mValuePaint.setTextAlign(Paint.Align.LEFT);

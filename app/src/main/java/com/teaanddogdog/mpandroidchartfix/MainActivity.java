@@ -13,8 +13,10 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.DefaultValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.formatter.StackedValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
@@ -68,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
 //        pieChart.setExtraRightOffset(30);//调整饼图右侧多30个dp，即向左移30dp
 
         List<PieEntry> entryList = new ArrayList<>();
-        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[0]));
-        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
-        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
-        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[3]));
-        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
-        entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
+        entryList.add(new PieEntry(100, alarm[3]));
+        entryList.add(new PieEntry(10, alarm[0]));
+        entryList.add(new PieEntry(10, alarm[1]));
+        entryList.add(new PieEntry(10, alarm[2]));
+        entryList.add(new PieEntry(10, alarm[1]));
+        entryList.add(new PieEntry(10, alarm[2]));
         entryList.add(new PieEntry(mRandom.nextInt(200), alarm[0]));
         entryList.add(new PieEntry(mRandom.nextInt(200), alarm[1]));
         entryList.add(new PieEntry(mRandom.nextInt(200), alarm[2]));
@@ -142,7 +144,9 @@ public class MainActivity extends AppCompatActivity {
         valueFormatter.setAppendix("次");
         PercentFormatter percentFormatter = new PercentFormatter();
         mDataSet.setValueFormatter(percentFormatter);
+//        mDataSet.setValueFormatter(new MyPrecentFormatter());
         mDataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);//值显示的位置
+
 
         PieData data = new PieData(mDataSet);
         pieChart.setData(data);
